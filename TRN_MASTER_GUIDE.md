@@ -16,20 +16,36 @@
    - Your student has a **Master's in Robotics and AI/ML**, knows Python and C++, but needs deliberate refreshers connecting foundational math and robotics concepts directly to physical terrain-aided navigation.
    - **Never rush.** Never assume understanding without verification. Never skip mathematical derivations or hand-wave physical intuition.
 
-2. **The "Theory First, Code Second" Workflow**:
-   For every module across all 4 phases, you must follow this strict 4-step pedagogical loop:
-   - **Step 1: Theory & Math Note in `knowledge/`**:
-     Write a comprehensive, standalone markdown note in the `knowledge/` directory before writing any implementation code. Connect the mathematical formulas (Linear Algebra, Calculus, Stochastic Calculus, Projective Geometry) directly to the physical vehicle dynamics and sensor readings.
-   - **Step 2: Pedagogical Check & Discussion**:
-     Walk the student through the concepts in chat. Ask targeted conceptual or intuitive questions to verify they truly grasp *why* this math is used and *what failure modes* look like in real flight.
-   - **Step 3: Clean, Modular Implementation in `src/`**:
-     Write production-grade, cleanly documented Python code with strict typing, docstrings, and comprehensive unit tests in `tests/`.
-   - **Step 4: Progress Update & Git Guidance**:
-     Update this file (`TRN_MASTER_GUIDE.md`) to mark milestones completed and provide clean, semantic git commit instructions for the student's public portfolio.
+2. **The 5-Step Progressive Workflow (MANDATORY FOR EVERY SUBPHASE)**:
+   For every subphase across all 4 phases (e.g. 1.1, 1.2, 1.3...), the agent and student must strictly execute this 5-step loop:
+
+```
+                      THE 5-STEP SUBPHASE LOOP
+                      
+  Step 1: Theory & Intuition Chapter in knowledge/
+          (Story -> Real-World Analogy -> Step-by-Step Math -> Software Architecture -> Curated Papers)
+                                     │
+                                     ▼
+  Step 2: Pedagogical Check & Conceptual Walkthrough
+          (Discuss in chat, verify understanding of math, failure modes, and edge cases)
+                                     │
+                                     ▼
+  Step 3: Clean, Modular Implementation in src/
+          (Strict typing, docstrings, clean architecture, zero shortcuts)
+                                     │
+                                     ▼
+  Step 4: Automated Testing & Verification in tests/
+          (Comprehensive pytest test suites, edge case verification)
+                                     │
+                                     ▼
+  Step 5: Progress Update & Semantic Git Commit
+          (Update TRN_MASTER_GUIDE.md and provide exact conventional git commit message)
+```
 
 3. **No Unprompted Fast-Forwarding**:
    - Do **not** generate full-phase code implementations in one single reply.
    - Break every phase down into bite-sized, interactive learning units.
+   - Always wait for the student's confirmation on Step 2 before writing code in Step 3.
 
 ---
 
@@ -195,7 +211,7 @@ In production-grade avionics, these subsystems are tightly fused using:
 | **Phase 0** | Sensor Physics & Altimeter Triad (Simplified) | 🟢 **COMPLETED** | [02_sensor_physics_and_altimeter_triad_simplified.md](knowledge/00_foundations/02_sensor_physics_and_altimeter_triad_simplified.md) | N/A | N/A |
 | **Phase 0** | Math & Coordinate Frames Step-by-Step | 🟢 **COMPLETED** | [03_math_and_coordinate_frames_demystified.md](knowledge/00_foundations/03_math_and_coordinate_frames_demystified.md) | N/A | N/A |
 | **Phase 0** | Foundations Synthesis & Bridge to Phase 1 | 🟢 **COMPLETED** | [04_foundations_synthesis_and_bridge_to_phase1.md](knowledge/00_foundations/04_foundations_synthesis_and_bridge_to_phase1.md) | N/A | N/A |
-| **Phase 1** | 1.1 DEM Representation & Coordinate Grid Transformations | ⚪ Pending | [Pending] | [Pending] | [Pending] |
+| **Phase 1** | 1.1 DEM Representation & Coordinate Grid Transformations | 🟢 **COMPLETED** | [01_dem_representation_and_coordinate_systems.md](knowledge/01_deterministic_matching/01_dem_representation_and_coordinate_systems.md) | [dem.py](src/terrain_matching/core/dem.py), [terrain_generator.py](src/terrain_matching/simulation/terrain_generator.py) | [test_dem.py](tests/test_dem.py) |
 | **Phase 1** | 1.2 Altimeter Modeling & Profile Sampling | ⚪ Pending | [Pending] | [Pending] | [Pending] |
 | **Phase 1** | 1.3 MAD & MSD Cost Functions & Metrics | ⚪ Pending | [Pending] | [Pending] | [Pending] |
 | **Phase 1** | 1.4 Exhaustive 1D & 2D Search Algorithms | ⚪ Pending | [Pending] | [Pending] | [Pending] |
@@ -236,6 +252,6 @@ Follow Conventional Commits:
 ---
 
 ## 📍 Where We Are Right Now
-- **Current Milestone**: Kickoff & Phase 0 Navigation Foundations.
-- **Active Task**: Teaching the core physics and mathematical setup of Terrain-Relative Navigation: Reference frames, DEM structures, sensor configurations, and how our robotics & ML background directly connects.
-- **Next Up**: Phase 1.1 DEM Representation, coordinate transformations, and the synthetic elevation generator.
+- **Current Milestone**: Phase 1: Deterministic Matching ──▶ **Subphase 1.1 Complete! Ready for Subphase 1.2**.
+- **Active Task**: Reviewing 3D/2D visualization artifacts of Subphase 1.1 and committing.
+- **Next Up**: Subphase 1.2: Altimeter Modeling & Profile Sampling (Step 1: Theory chapter in `knowledge/`).
