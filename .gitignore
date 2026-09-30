@@ -33,3 +33,7 @@ htmlcov/
 data/raw/
 data/cache/
 *.log
+
+Docs/
+temp.md
+TRN_MASTER_GUIDE.md
