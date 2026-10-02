@@ -1,5 +1,6 @@
 """Core terrain matching package."""
 
+from terrain_matching.core.ambiguity import AmbiguityAnalyzer, AmbiguityReport
 from terrain_matching.core.dem import DigitalElevationModel
 from terrain_matching.core.matcher import DeterministicMatcher, MatchResult
 from terrain_matching.core.metrics import (
@@ -16,6 +17,8 @@ __all__ = [
     "DigitalElevationModel",
     "DeterministicMatcher",
     "MatchResult",
+    "AmbiguityAnalyzer",
+    "AmbiguityReport",
     "mean_absolute_difference",
     "mean_squared_difference",
     "root_mean_squared_difference",
